@@ -27,14 +27,14 @@ const UserList = () => {
     }, [user])
     const addUser = () => {
         dispatch({ type: "CREATE_USER", payload: user.users.firstName })
-        console.log(user);
+        console.log(user.users.firstName);
         setUser('')
     }
     const deleteList = (index) => {
         dispatch({ type: addUsers.DELETE_USER, payload: index })
     }
     const addUserList = () => {
-        dispatch({ type: addUsers.CREATE_USER, payload: user })
+        dispatch({ type: addUsers.CREATE_USER, payload: user.users.firstName })
         console.log(user.users.firstName)
     }
         ;
@@ -43,8 +43,8 @@ const UserList = () => {
         <div className='userlist'>
             <div className='userbox'>
                 <label>
-                    <input type="text" value={user.users.firstName} onChange={(e) => dispatch({ type: 'CREATE_USER', payload: e.target.value })
-                    } placeholder='FirstName' />
+                    <input type="text" value={user.users.firstName}  onChange={(e) => dispatch({ type: 'CREATE_USER', payload: e.target.value })
+                    }  placeholder='FirstName' />
                 </label>
                 <label>
                     <input type="text" placeholder='LirstName' />
@@ -66,7 +66,7 @@ const UserList = () => {
             </div>
             <div>
                 <h3>
-           ................................{user.users.firstName}..........................................</h3>
+                    ..........................................................................</h3>
             </div>
 
         </div>
